@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button"
-import { CircularProgress, Paper, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { CircularProgress, Paper, Typography, useTheme } from "@mui/material";
 
 import ArrowForward from '@mui/icons-material/ArrowForward';
 import LoginBackground from '@/assets/login5.gif';
@@ -17,7 +17,7 @@ interface RedirectResponse {
 // Mock function - replace with actual implementation
 
 
-const LoginComponent = ({ }: { isMobile: boolean }) => {
+const LoginComponent = () => {
     const searchParams = new URLSearchParams(window.location.search);
     const next = searchParams.get('next');
     const pathName = searchParams.get('pathName') || '/user/login';
@@ -197,7 +197,6 @@ const LoginComponent = ({ }: { isMobile: boolean }) => {
 
 const LoginPage = () => {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <Paper sx={{
@@ -233,7 +232,7 @@ const LoginPage = () => {
                 zIndex: 1,
             }
         }}>
-            <LoginComponent isMobile={isMobile} />
+            <LoginComponent />
         </Paper>
     )
 }
