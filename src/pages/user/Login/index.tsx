@@ -14,8 +14,6 @@ import { useNavigate } from "react-router-dom";
 interface RedirectResponse {
     redirect: string;
 }
-// Mock function - replace with actual implementation
-
 
 const LoginComponent = () => {
     const searchParams = new URLSearchParams(window.location.search);
